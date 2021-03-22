@@ -39,68 +39,36 @@
 \tableofcontents
 \newpage
 \section{Sección introductoria}\label{intro}
-Esta es la primera sección, podemos agregar algunos elementos adicionales y todo será escrito correctamente. Más aún, si una palabra es demasiado larga y tiene que ser truncada, babel tratará de truncarla correctamente dependiendo del idioma.
+El proyecto final de la materia de informatica 2 consta del diseño y la creación de un video juego, usando C++ en QT creator. En este documento se presenta la etapa del diseño plasmando las ideas \cite{ideas}, tematica, movimientos posibles que nos dará una idea y será una base para el desarrollo del video juego.
 
 \section{Sección de contenido} \label{contenido}
-Esta sección es para agregar toda la información correspondiente con código, citas, etc.
-\subsection{Citación}
-Vamos a citar por ejemplo un artículo de \textbf{Albert Einstein} \cite{einstein}.
-También es posible citar libros \cite{dirac} o documentos en línea \cite{knuthwebsite}.\\\\
-Revisar en la última sección el formato de las referencias en IEEE.
 
-\subsection{Incluir código en el documento}
-%
-A continuación, se presenta el código \ref{codigo_ejemplo}, que nos permite incluir en el informe partes de programa que requieran una explicación adicional.
-\begin{lstlisting}[language=C++, label=codigo_ejemplo]
-// Programa desarrollado, compilado y ejecutado en https://www.onlinegdb.com
-#include <iostream>
+\subsection{Espacio del juego}
+El mensajero (The Harbinger). llevar un mensaje a los 3 pueblos elegidos (Romans, Galatians, Colossians) para lo cual tendrá que pasar por muchas travesias.
+Cada pueblo tendrá su adversario con sus caracteristicas para impedir llevar el mensaje.
 
-/*
- * Esto es un comentario de varias lineas
- */
 
-// Comentario de una sola linea
+\subsection{Las dimenciones mecanicas: Reglas del juego}
+Al iniciar el juego se podrá elegir el persona entre mujer u hombre.
 
-#define N 10
+\vspace{0.1cm}
+En cada pueblo de darán algunas virtudes (movimientos) al jugador que le ayudará a enfrentar a su adversario y llevar el mensaje.
 
-using namespace std;
+\vspace{0.1cm}
+Si el adversario lográ quitarle el mensaje, el mensajero tendrá 3 vidas u oportunidades para volver a intentarlo, de lo contrario el mensajero volverá al pueblo donde inicio.
 
-int main()
-{
-    
-    for( int i = 0 ; i < N ; i++ ){
-        
-        if( !(i % 2) )
-            cout << " El valor de i es -> " << i << endl;
-    }
-    
-    return 0;
-}
+\vspace{0.1cm}
+En el primer pueblo (Romans) El adversario estará en un lugar del pueblo lanzando piedras desde distintos lugares aleatorios con un tiro parabolico, el mensajero tendrá que saltar esquivando las piedras para no ser golpeado ya que al ser golpeado perderá 1 de 3 vidas u oportunidades para llevar el mensaje a ese pueblo.
 
-//Resultado programa
+\vspace{0.1cm}
+En el segundo pueblo (Galatians), cada vez que el adversario lanze la llama de la quietud al mensajero, este tendrá 3 herramientas que le ayudarán a liberarse, la idea es poder entregar el mensaje sin ser tocado por esa llama.
 
-/*
-El valor de i es -> 0
-El valor de i es -> 2
-El valor de i es -> 4
-El valor de i es -> 6
-El valor de i es -> 8
-*/
-\end{lstlisting}
-En la sección \ref{imagenes}, se presentará como añadir ilustraciones al texto.
+\vspace{0.1cm}
+En el tercer pueblo (Colossians) constará de superficies o pequeñas plataformas en movimiento en las cuales el mensajero tendrá que subir hasta llegar a la cima donde entregará el último mensaje; pero ahora tendrá a dos adversarios (los mismos de los pueblos anteriores) atacando e impidiendo llegar a la cima. El mensajero tendrá ayudas para poder llegar: como impulso para saltar más alto, y protección.
+\subsection{El juego es movimiento}
+Algunos de los mivimientos planteados son: saltar, agarrar o quitar, tiro parablico, quietud.
+Algunas magnitudes como fuerza, impulso (magnitud vectorial que tiene la dirección y el sentido de la fuerza que lo produce), medidas como angulo para el tiro parabolico.
 
-\section{Inclusión de imágenes} \label{imagenes}
-
-En la Figura (\ref{fig:cpplogo}), se presenta el logo de C++ contenido en la carpeta images.
-
-\begin{figure}[h]
-\includegraphics[width=4cm]{cpplogo.png}
-\centering
-\caption{Logo de C++}
-\label{fig:cpplogo}
-\end{figure}
-
-Las secciones (\ref{intro}), (\ref{contenido}) y (\ref{imagenes}) dependen del estilo del documento.
 
 \bibliographystyle{IEEEtran}
 \bibliography{references}
