@@ -1,16 +1,18 @@
 #include "widget.h"
 #include "ui_widget.h"
-
+#include <QGraphicsScene>
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    escena = new QGraphicsScene;
 }
 
 Widget::~Widget()
 {
     delete ui;
+    delete escena;
 }
 
 
