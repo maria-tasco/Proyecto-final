@@ -52,10 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../proyectoFinal/main.cpp \
-		../proyectoFinal/widget.cpp moc_widget.cpp
-OBJECTS       = main.o \
+SOURCES       = ../proyectoFinal/Objetosescenario.cpp \
+		../proyectoFinal/main.cpp \
+		../proyectoFinal/widget.cpp qrc_imagenes.cpp \
+		moc_widget.cpp
+OBJECTS       = Objetosescenario.o \
+		main.o \
 		widget.o \
+		qrc_imagenes.o \
 		moc_widget.o
 DIST          = /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/common/unix.conf \
@@ -160,6 +164,7 @@ DIST          = /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/qt_config.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_post.prf \
+		../proyectoFinal/.qmake.stash \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/toolchain.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -180,7 +185,9 @@ DIST          = /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/exceptions.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/yacc.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/lex.prf \
-		../proyectoFinal/proyectoFinal.pro ../proyectoFinal/widget.h ../proyectoFinal/main.cpp \
+		../proyectoFinal/proyectoFinal.pro ../proyectoFinal/Objetosescenario.h \
+		../proyectoFinal/widget.h ../proyectoFinal/Objetosescenario.cpp \
+		../proyectoFinal/main.cpp \
 		../proyectoFinal/widget.cpp
 QMAKE_TARGET  = proyectoFinal
 DESTDIR       = 
@@ -296,6 +303,7 @@ Makefile: ../proyectoFinal/proyectoFinal.pro /home/hailersh/Qt/6.1.3/gcc_64/mksp
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/qt_config.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/toolchain.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/default_pre.prf \
@@ -317,6 +325,7 @@ Makefile: ../proyectoFinal/proyectoFinal.pro /home/hailersh/Qt/6.1.3/gcc_64/mksp
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/yacc.prf \
 		/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/lex.prf \
 		../proyectoFinal/proyectoFinal.pro \
+		../proyectoFinal/imagenes.qrc \
 		/home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Widgets.prl \
 		/home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Gui.prl \
 		/home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Core.prl
@@ -424,6 +433,7 @@ Makefile: ../proyectoFinal/proyectoFinal.pro /home/hailersh/Qt/6.1.3/gcc_64/mksp
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/qt_config.prf:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/toolchain.prf:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/default_pre.prf:
@@ -445,6 +455,7 @@ Makefile: ../proyectoFinal/proyectoFinal.pro /home/hailersh/Qt/6.1.3/gcc_64/mksp
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/yacc.prf:
 /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/lex.prf:
 ../proyectoFinal/proyectoFinal.pro:
+../proyectoFinal/imagenes.qrc:
 /home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Widgets.prl:
 /home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Gui.prl:
 /home/hailersh/Qt/6.1.3/gcc_64/lib/libQt6Core.prl:
@@ -462,9 +473,10 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents ../proyectoFinal/imagenes.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /home/hailersh/Qt/6.1.3/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../proyectoFinal/widget.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../proyectoFinal/main.cpp ../proyectoFinal/widget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../proyectoFinal/Objetosescenario.h ../proyectoFinal/widget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../proyectoFinal/Objetosescenario.cpp ../proyectoFinal/main.cpp ../proyectoFinal/widget.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../proyectoFinal/widget.ui $(DISTDIR)/
 
 
@@ -489,8 +501,14 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_imagenes.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_imagenes.cpp
+qrc_imagenes.cpp: ../proyectoFinal/imagenes.qrc \
+		/home/hailersh/Qt/6.1.3/gcc_64/libexec/rcc \
+		../proyectoFinal/Imagenes/mensajero.png
+	/home/hailersh/Qt/6.1.3/gcc_64/libexec/rcc -name imagenes ../proyectoFinal/imagenes.qrc -o qrc_imagenes.cpp
+
 compiler_moc_predefs_make_all: moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) moc_predefs.h
@@ -627,6 +645,9 @@ moc_widget.cpp: ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSize \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSizeF \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/QTransform \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
 		moc_predefs.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/libexec/moc
 	/home/hailersh/Qt/6.1.3/gcc_64/libexec/moc $(DEFINES) --include /home/hailersh/projects/QTProjects/ProyectoFinal/Proyecto-final/build-proyectoFinal-Desktop_Qt_6_1_3_GCC_64bit-Debug/moc_predefs.h -I/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/linux-g++ -I/home/hailersh/projects/QTProjects/ProyectoFinal/Proyecto-final/proyectoFinal -I/home/hailersh/Qt/6.1.3/gcc_64/include -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../proyectoFinal/widget.h -o moc_widget.cpp
@@ -648,9 +669,145 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_predefs_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
+
+Objetosescenario.o: ../proyectoFinal/Objetosescenario.cpp ../proyectoFinal/Objetosescenario.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QMainWindow \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qglobal.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qconfig.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qtcore-config.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qsysinfo.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qlogging.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qflags.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qatomic.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmutex.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qnumeric.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qversiontagging.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtgui-config.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtwidgets-config.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qwidget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qnamespace.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qwindowdefs_win.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qobject.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstring.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qchar.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringview.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qbytearray.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qrefcount.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qarraydata.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qpair.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qarraydataops.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringliteral.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qanystringview.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qlist.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qiterator.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringlist.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qalgorithms.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcoreevent.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmetatype.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcompare.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qvarlengtharray.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qdatastream.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qiterable.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmath.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qobject_impl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qproperty.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qshareddata.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qpropertyprivate.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmargins.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qrect.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qsize.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qpoint.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpalette.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qcolor.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qrgb.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qrgba64.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qbrush.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qimage.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpixelformat.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtransform.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpolygon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qregion.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qline.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpixmap.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qsharedpointer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qfont.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qfontinfo.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qsizepolicy.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qcursor.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qbitmap.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qkeysequence.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qevent.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qiodevice.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qpointer.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qurl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qvariant.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qmap.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qshareddata_impl.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qhash.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qdebug.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qtextstream.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qstringconverter.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qset.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcontiguouscache.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qeventpoint.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qvector2d.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qvectornd.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpointingdevice.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qinputdevice.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qscreen.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QList \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QObject \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QRect \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSize \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSizeF \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/QTransform \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpainterpath.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QString
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Objetosescenario.o ../proyectoFinal/Objetosescenario.cpp
 
 main.o: ../proyectoFinal/main.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QWidget \
@@ -779,6 +936,9 @@ main.o: ../proyectoFinal/main.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSize \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSizeF \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/QTransform \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QApplication \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qapplication.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcoreapplication.h \
@@ -915,8 +1075,39 @@ widget.o: ../proyectoFinal/widget.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSize \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QSizeF \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/QTransform \
-		ui_widget.h
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
+		ui_widget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QVariant \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QApplication \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qapplication.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcoreapplication.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qeventloop.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qguiapplication.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qinputmethod.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qlocale.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsView \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsview.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpainter.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtextoption.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qscrollarea.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qframe.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QPushButton \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qabstractbutton.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QTextBrowser \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtextbrowser.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtextedit.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtextdocument.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtextcursor.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qtextformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o widget.o ../proyectoFinal/widget.cpp
+
+qrc_imagenes.o: qrc_imagenes.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_imagenes.o qrc_imagenes.cpp
 
 moc_widget.o: moc_widget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_widget.o moc_widget.cpp
