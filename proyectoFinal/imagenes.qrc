@@ -1,5 +1,8 @@
 <RCC>
-    <qresource prefix="/">
-        <file>Imagenes/mensajero.png</file>
+    <qresource prefix="/"/>
+    <qresource prefix="/ObjetosEscenario/Bloques">
+        <file>Imagenes/bloqueOK.png</file>
+        <file>Imagenes/bloqueNoOk.png</file>
+        <file>Imagenes/bloqueEnemigo.png</file>
     </qresource>
 </RCC>

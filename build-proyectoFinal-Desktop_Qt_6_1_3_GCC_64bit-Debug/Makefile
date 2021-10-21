@@ -506,7 +506,10 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_imagenes.cpp
 qrc_imagenes.cpp: ../proyectoFinal/imagenes.qrc \
 		/home/hailersh/Qt/6.1.3/gcc_64/libexec/rcc \
-		../proyectoFinal/Imagenes/mensajero.png
+		../proyectoFinal/Imagenes/mensajero.png \
+		../proyectoFinal/Imagenes/bloqueNoOk.png \
+		../proyectoFinal/Imagenes/bloqueOK.png \
+		../proyectoFinal/Imagenes/bloqueEnemigo.png
 	/home/hailersh/Qt/6.1.3/gcc_64/libexec/rcc -name imagenes ../proyectoFinal/imagenes.qrc -o qrc_imagenes.cpp
 
 compiler_moc_predefs_make_all: moc_predefs.h
@@ -648,6 +651,15 @@ moc_widget.cpp: ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
+		../proyectoFinal/Objetosescenario.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QMainWindow \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpainterpath.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QString \
 		moc_predefs.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/libexec/moc
 	/home/hailersh/Qt/6.1.3/gcc_64/libexec/moc $(DEFINES) --include /home/hailersh/projects/QTProjects/ProyectoFinal/Proyecto-final/build-proyectoFinal-Desktop_Qt_6_1_3_GCC_64bit-Debug/moc_predefs.h -I/home/hailersh/Qt/6.1.3/gcc_64/mkspecs/linux-g++ -I/home/hailersh/projects/QTProjects/ProyectoFinal/Proyecto-final/proyectoFinal -I/home/hailersh/Qt/6.1.3/gcc_64/include -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui -I/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../proyectoFinal/widget.h -o moc_widget.cpp
@@ -939,6 +951,15 @@ main.o: ../proyectoFinal/main.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
+		../proyectoFinal/Objetosescenario.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QMainWindow \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpainterpath.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QString \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QApplication \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qapplication.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1078,6 +1099,15 @@ widget.o: ../proyectoFinal/widget.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsScene \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpen.h \
+		../proyectoFinal/Objetosescenario.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QMainWindow \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qmainwindow.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qgraphicsitem.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qpainterpath.h \
+		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QString \
 		ui_widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtCore/QVariant \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QApplication \
@@ -1097,7 +1127,6 @@ widget.o: ../proyectoFinal/widget.cpp ../proyectoFinal/widget.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QPushButton \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qpushbutton.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/hailersh/Qt/6.1.3/gcc_64/include/QtGui/qicon.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/QTextBrowser \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtextbrowser.h \
 		/home/hailersh/Qt/6.1.3/gcc_64/include/QtWidgets/qtextedit.h \
