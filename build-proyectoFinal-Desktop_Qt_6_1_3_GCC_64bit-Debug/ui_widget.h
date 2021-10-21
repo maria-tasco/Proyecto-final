@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QWidget>
@@ -22,6 +23,7 @@ class Ui_Widget
 public:
     QTextBrowser *textBrowser;
     QPushButton *pushButton;
+    QGraphicsView *graphicsView;
 
     void setupUi(QWidget *Widget)
     {
@@ -30,10 +32,13 @@ public:
         Widget->resize(800, 600);
         textBrowser = new QTextBrowser(Widget);
         textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(60, 200, 161, 101));
+        textBrowser->setGeometry(QRect(670, 40, 81, 71));
         pushButton = new QPushButton(Widget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(90, 110, 89, 25));
+        pushButton->setGeometry(QRect(660, 10, 89, 25));
+        graphicsView = new QGraphicsView(Widget);
+        graphicsView->setObjectName(QString::fromUtf8("graphicsView"));
+        graphicsView->setGeometry(QRect(0, 0, 651, 341));
 
         retranslateUi(Widget);
 
