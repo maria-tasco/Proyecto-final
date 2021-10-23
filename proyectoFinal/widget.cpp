@@ -14,12 +14,16 @@ Widget::Widget(QWidget *parent) //constructor
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    barra = new ObjetosEscenario (":/ObjetosEscenario/Bloques/Imagenes/bloqueOK.png");
-    barra -> setPos(0,0);
+    barra = new ObjetosEscenario (":/ObjetosEscenario/Bloques/Imagenes/bloqueOK.png",69,21);
+    barra -> setPos(200,200);
+
+    enemigo = new ObjetosEscenario (":/Personajes/imagenes/Imagenes/enemigo.png", 70,70);
+    enemigo -> setPos(0,0);
 
     escena = new QGraphicsScene;
     escena->setSceneRect(0,0, ui->graphicsView->width()-5, ui->graphicsView->height()-5);
     escena -> addItem(barra);
+    escena -> addItem(enemigo);
     ui -> graphicsView -> setScene(escena);
 }
 Widget::~Widget()

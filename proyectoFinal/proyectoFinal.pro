@@ -10,11 +10,15 @@ CONFIG += c++11
 
 SOURCES += \
     Objetosescenario.cpp \
+    enemigos.cpp \
     main.cpp \
+    mensajeros.cpp \
     widget.cpp
 
 HEADERS += \
     Objetosescenario.h \
+    enemigos.h \
+    mensajeros.h \
     widget.h
 
 FORMS += \

@@ -5,4 +5,7 @@
         <file>Imagenes/bloqueNoOk.png</file>
         <file>Imagenes/bloqueEnemigo.png</file>
     </qresource>
+    <qresource prefix="/Personajes/imagenes">
+        <file>Imagenes/enemigo.png</file>
+    </qresource>
 </RCC>

@@ -8,7 +8,7 @@
 class ObjetosEscenario : public QObject, public QGraphicsPixmapItem //heredando clases
 {
 public:
-    ObjetosEscenario(QString nameImagen);
+    ObjetosEscenario(QString nameImagen, int w, int h);
 };
 
 #endif // OBJETOSESCENARIO_H

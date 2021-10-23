@@ -1,6 +1,6 @@
 #include "Objetosescenario.h"
 
-ObjetosEscenario::ObjetosEscenario(QString nameImagen)
+ObjetosEscenario::ObjetosEscenario(QString nameImagen, int w, int h)
 {
-    setPixmap(QPixmap(nameImagen)); //De est forma cargamos la imagen
+    setPixmap(QPixmap(nameImagen).scaled(w,h)); //De est forma cargamos la imagen
 }

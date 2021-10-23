@@ -33,7 +33,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Barra</string>
+    <string>Start</string>
    </property>
   </widget>
   <widget class="QGraphicsView" name="graphicsView">

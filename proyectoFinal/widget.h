@@ -27,5 +27,6 @@ private:
     Ui::Widget *ui;
     QGraphicsScene * escena;
     ObjetosEscenario * barra;
+    ObjetosEscenario *enemigo;
 };
 #endif // WIDGET_H
