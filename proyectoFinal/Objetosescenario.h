@@ -5,10 +5,21 @@
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QString>
-class ObjetosEscenario : public QObject, public QGraphicsPixmapItem //heredando clases
+#include <QGraphicsScene>
+#include <QPaintEvent>
+#include <QPainter>
+#include <QPixmap>
+#include <QKeyEvent>
+
+
+class ObjetosEscenario : public virtual QObject, public QGraphicsPixmapItem  //heredando clases
 {
 public:
     ObjetosEscenario(QString nameImagen, int w, int h);
+    //int posicionesBarras(int *posx, int *posy);
+
+
+
 };
 
 #endif // OBJETOSESCENARIO_H
